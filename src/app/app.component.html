@@ -8,6 +8,10 @@
 </style>
 
 <div>
+  <h1>Hora local: {{time()}}</h1>
+</div>
+
+<div>
   <p>Interacion usando signal</p>
   <div *ngIf="abrirMenu()" class="caja"></div>
   <button (click)="abrirMenu.set(!abrirMenu())">{{abrirMenu()?"cerrar":"abrir"}} caja</button>
@@ -59,3 +63,4 @@
   </ul>
 
 </div>
+

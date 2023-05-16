@@ -35,4 +35,10 @@ export class AppComponent {
     {name:"felipe",role:"administrador",uid:"jh776dcb676ad"}
   )
 
+  //pequeño timer con señales
+  public time = signal(new Date().toLocaleTimeString());
+
+  intervaloReloj = setInterval(() => {
+    this.time.set(new Date().toLocaleTimeString());
+  },1000);
 }
