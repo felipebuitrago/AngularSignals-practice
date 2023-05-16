@@ -1,3 +1,19 @@
 
 
-    <span>{{ title }} app is running!</span>
+<span>{{ title }} app is running!</span>
+<br>
+<hr>
+<span *ngFor="let current of notSignalArray">
+
+  {{ current }} !
+
+</span>
+
+<hr>
+
+<span *ngFor="let current of signalArray()">
+
+  {{ current }} !
+
+</span>
+
