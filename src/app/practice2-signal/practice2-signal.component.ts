@@ -8,6 +8,7 @@ export class Practice2SignalComponent {
 
   public multiplo1 = signal(1);
   public multiplo2 = signal(2);
+  
   public squareCompute = computed( () =>{
     return this.multiplo1() * this.multiplo2();
   } );
