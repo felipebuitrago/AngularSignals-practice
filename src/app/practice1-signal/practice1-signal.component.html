@@ -1,0 +1,65 @@
+  <style>
+    .caja{
+      width: 40px;
+      height: 50px;
+      background-color: blue;
+      color: blue;
+    }
+  </style>
+  
+  <div>
+    <h1>Hora local: {{time()}}</h1>
+  </div>
+  
+  <div>
+    <p>Interacion usando signal</p>
+    <div *ngIf="abrirMenu()" class="caja"></div>
+    <button (click)="abrirMenu.set(!abrirMenu())">{{abrirMenu()?"cerrar":"abrir"}} caja</button>
+  </div>
+  
+  <hr>
+  
+  <p>Referencia a variable metodo tradicional: <code>{{"\<span>{{ title }} app is running!\</span>"}}</code></p>
+  <span>{{ title }} app is running!</span>
+  
+  <br>
+  <hr>
+  <p>Referencia a arreglo metodo tradicional: <code>{{"\<span *ngFor=\"let current of notSignalArray\">\{\{ current \}\} !\</span>"}}</code></p>
+  <span *ngFor="let current of notSignalArray">
+  
+    {{ current }} !
+  
+  </span>
+  
+  <hr>
+  <p>Referencia a arreglo empleando señal: <code>{{"\<span *ngFor=\"let current of signalArray()\">\{\{ current \}\} !\</span>"}}</code></p>
+  <span *ngFor="let current of signalArray()">
+  
+    {{ current }} !
+  
+  </span>
+  
+  <hr>
+  <p>Arreglo de objetos de tipo MenuItems empleando señal: <code>{{"\<span *ngFor=\"let item of menuItems()\">\<a href=\"\{\{item.link\}\}\">\{\{ item.label \}\} !\</a>\</span>"}}</code></p>
+  <div *ngFor="let item of menuItems()">
+  
+    <a href="{{item.link}}">{{ item.label }} !</a>
+  
+  </div>
+  
+  <hr>
+  
+  <div >
+    <p>objetos de tipo Usuario empleando señal: <code>{{"\<li\>\n\{\{usuario().name\}\}\n\</li>\n\<li>\n\{\{usuario().uid \}\} | \{\{ usuario().role \}\}\n\</li>"}}</code></p>
+  
+    <p>Usuario Activo:</p> <br>
+    <ul>
+      <li>
+        {{usuario().name}}
+      </li>
+      <li>
+        {{usuario().uid }} | {{ usuario().role }}
+      </li>
+    </ul>
+  
+  </div>
