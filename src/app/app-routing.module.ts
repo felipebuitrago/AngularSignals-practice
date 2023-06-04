@@ -14,6 +14,14 @@ const routes: Routes = [
   {
     path : 'practice2Signals', component : Practice2SignalComponent
   },
+  {
+    path : 'signals', 
+    loadChildren: () => import('./signals/signals.module').then(m => m.SignalsModule)
+  },
+  {
+    path : '**', 
+    redirectTo: 'practice1Signals'
+  }
 ];
 
 @NgModule({
