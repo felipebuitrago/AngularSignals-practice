@@ -14,7 +14,7 @@ const routes: Routes = [
       { path: 'counter', component: CounterPageComponent },
       { path: 'user-info', component: UserInfoPageComponent },
       { path: 'properties', component: PropertiesPageComponent },
-      { path: '**', redirectTo: 'counter' }
+      { path: '**', redirectTo: '' }
     ]
   }
 ];
